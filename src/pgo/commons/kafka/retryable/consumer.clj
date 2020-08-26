@@ -4,10 +4,13 @@
 
 
 (defn client-factory
- [{:keys [cons-props
+ [{:keys [group-id
+          topic-props
+          cons-props
           prod-props]}]
  (proxy [KafkaClientFactory] []
+  (groupId [] group-id)
   (consumer []
-   (jd.cli/consumer cons-props))
+   (jd.cli/consumer cons-props topic-props))
   (producer []
-   (jd.cli/producer prod-props))))
+   (jd.cli/producer prod-props topic-props))))
