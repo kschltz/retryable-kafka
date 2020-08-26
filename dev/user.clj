@@ -66,3 +66,12 @@
 
 (def consumers-poll
  (reliable-consumption [topic]))
+
+
+(comment
+ "To test, spin up a kafka broker
+  in localhost:9092 before loading up this namespace"
+         (send! "My msg1")                                   ;; will end up in atom a
+ (deref a)
+ (send! "boom")                                     ;;Will end up in retry
+         )
