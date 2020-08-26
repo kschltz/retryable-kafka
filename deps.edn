@@ -1,0 +1,6 @@
+{:deps
+          {no.finn.retriable-kafka-consumer/retriable-kafka-consumer
+           {:mvn/version "1.54"}
+           fundingcircle/jackdaw
+           {:mvn/version "0.7.6"}}
+ :aliases {:dev {:extra-paths ["dev"]}}}
